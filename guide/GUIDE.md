@@ -1,7 +1,7 @@
 # MP2 — Selecting Reliable LLM Reasoning
 
 DASE7506 · Individual coursework · 10% of the course grade  
-**Submission deadline and leaderboard opening: to be announced.**
+**Deadline: 31 October 2026, 23:59 (Beijing time, UTC+8). Submissions are open.**
 
 A language model gives four solutions to the same maths problem. They may sound convincing and still disagree. Build a method that chooses a correct final answer, and investigate what makes your choice reliable. See the [README](../code/README.md) for an example and research questions.
 
@@ -26,7 +26,7 @@ A language model gives four solutions to the same maths problem. They may sound 
 
 ## 4. Submission and peer review
 
-- **Submit:** use MP2 on the [course website](https://xudongwu-0.github.io/courses/dase7506/) when it opens. Early entries need your student ID and score; your final entry needs **code and checkpoint links**. Complete the generated GitHub issue; use the same account for updates.
+- **Submit:** use the [MP2 website](https://xudongwu-0.github.io/courses/dase7506/mp2/). Early entries need your student ID and score; your final entry, submitted before the deadline, needs **code and checkpoint links**. New scores close automatically at the deadline. Complete the generated GitHub issue; use the same account for updates.
 - **Artifacts:** include your report and exact installation/training/evaluation commands. The checkpoint must reproduce results **without retraining**; training-free methods may submit a configuration.
-- **Peer review:** instructors release links and frozen scores for **seven days**. File a **Peer Review Report** with submission number and reproduced score, or email **wu.xudong@connect.hku.hk**. Confirmed discrepancies can earn rewards; reports alone never change grades.
+- **Peer review:** after the deadline, instructors manually release links and frozen scores for **seven days**. File a **Peer Review Report** with submission number and reproduced score, or email **wu.xudong@connect.hku.hk**. Confirmed discrepancies can earn rewards; reports alone never change grades.
 - <span style="color: #b42318;"><strong>We use automated checkpoint evaluation scripts and instructor spot checks to verify scores. Confirmed serious score misreporting will be formally recorded.</strong></span>
