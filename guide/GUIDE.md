@@ -3,7 +3,7 @@
 DASE7506 · Individual coursework · 10% of the course grade  
 **Submission deadline and leaderboard opening: to be announced.**
 
-Choose one of four supplied LLM solutions per maths problem. Design your own method; learned and training-free approaches are welcome.
+A language model gives four solutions to the same maths problem. They may sound convincing and still disagree. Build a method that chooses a correct final answer, and investigate what makes your choice reliable. Use learning, checking rules, or your own combination; see the [README](../code/README.md) for an example and research questions.
 
 ## 1. What we provide
 

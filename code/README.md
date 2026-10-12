@@ -1,6 +1,47 @@
-# MP2 code — installation and usage
+# MP2 — Selecting Reliable LLM Reasoning
 
-Read [the project guide](../guide/GUIDE.md) for assessment, constraints, submission and peer review. The complete repository includes all data and representations; no API key or model download is needed. After obtaining the repository, run prediction and scoring commands from **code/**.
+A language model produces four solutions to the same maths problem. They can all sound convincing, show several calculations, and still disagree on the answer. Your task is to build a program that reads them and chooses one.
+
+The language model has already done its part. We provide the questions, its four candidate solutions, and fixed numerical representations of those solutions. You decide how to use that information: train a small model, write a checking procedure, or combine ideas. The project can be done on CPU, and the repository includes the complete data.
+
+The output is simple: **one candidate index per question**. The interesting part is deciding what evidence makes one answer more believable than another.
+
+## A small example
+
+Suppose the question is:
+
+> A bus travels at 60 km/h. It leaves at 9 am and arrives at noon, including a 30-minute stop. How far does it travel?
+
+Two candidate excerpts might read:
+
+| Candidate | Reasoning and answer |
+|---|---|
+| A | There are 3 hours between 9 am and noon. Distance = 60 × 3 = **180 km**. |
+| B | The bus spends 2.5 hours moving. Distance = 60 × 2.5 = **150 km**. |
+
+Both multiplications are correct. Candidate A makes a mistake before the multiplication: it treats the stop as time spent moving. Checking equations alone would miss that error. A method that notices the relevant condition could choose B.
+
+Real candidates can be harder to distinguish. An explanation may contain a bad intermediate step but land on the right final answer; a neat, internally consistent calculation may solve a slightly different problem. Our scorer checks the **final numeric answer**. Keep that distinction in mind when interpreting what your method has learned.
+
+## Questions worth investigating
+
+- **Does reading the reasoning actually help?** Compare methods that use the full solution, the question and final answer, or the supplied representations. Which information accounts for the improvement?
+- **What makes a wrong answer look convincing?** Does your method learn useful reasoning patterns, or depend on length, formatting and confident wording? Design an ablation that separates these explanations.
+- **Should a solution be judged on its own?** A candidate may look plausible until you compare it with the other three. Can comparing candidates expose a missed condition or a conflicting interpretation?
+- **Can the method recognise its own uncertainty?** Are high scores associated with correct choices? What happens on questions where different methods disagree?
+- **When does more computation pay off?** A more elaborate method or a combination of methods may improve accuracy, or just make the same mistakes more expensively. Measure which happens in your experiments.
+
+Pick a question you care about, state what you expect to happen, and test it. A failed idea with a clear explanation can teach us more than another model with an unexplained score. Your report should make the connection between your design, the evidence and the conclusion.
+
+## What you will build
+
+You write the selection method and any training code it needs. We supply an empty function interface and an independent evaluator. Training references let you determine which candidate answers are correct; validation is for development and selection. At evaluation, your method sees the question, the candidate texts and their fixed representations, then chooses a candidate without consulting reference answers.
+
+Each group has at least one correct final answer, and more than one candidate can be correct. Any correct choice earns the point. This makes the task about recognising a good answer among available solutions. The published score is selection accuracy on this course bank.
+
+Start with a small implementation you can understand, record where it fails, and use those failures to motivate your next change. Methods with and without learned weights are both eligible. The resource limits are **16 MiB of additional inference assets** and **30 seconds for complete CPU evaluation** on the reference machine; exact measurement rules are below.
+
+Read [the project guide](../guide/GUIDE.md) for assessment, constraints, submission and peer review. After obtaining the repository, run prediction and scoring commands from **code/**. No API key or model download is needed.
 
 ## 1. Install and check the data
 

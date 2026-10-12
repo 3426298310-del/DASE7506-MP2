@@ -1,7 +1,7 @@
 {
   "protocol": "dase7506-mp2-open-hard-verifier-v5",
   "files": {
-    "code/README.md": "8d8f499e967e85307719638ce3ab5a16d612ea88ef73b5e5111da2fb34029281",
+    "code/README.md": "22b412c6911ca7d8822c8256b2f99dc3d5052592c5baa845790a09fbad3a0204",
     "code/check_data.py": "32f203e156e3019f87bb038ade4f303da21ca2f1694bb678a3ddc44661f0b533",
     "code/common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
     "code/data/LICENSE.txt": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b",
@@ -20,6 +20,6 @@
     "code/requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
     "code/score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
     "code/submission.py": "37dcf01801937c4ba13a05a018b352afd2ff264541035143efa955ca31e24c10",
-    "guide/GUIDE.md": "5925d2935d3f28b6964bfc9487787822e48f77a5ca9f28d2cdf94607661df4b5"
+    "guide/GUIDE.md": "1eb3ce7c0125f911a7d73c6af8ff05311e014486a29074b050ef04bf02c5bd2a"
   }
 }
