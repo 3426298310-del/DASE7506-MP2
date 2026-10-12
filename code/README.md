@@ -1,47 +1,8 @@
-# MP2 — Selecting Reliable LLM Reasoning
+# MP2 — Code and Running Instructions
 
-A language model produces four solutions to the same maths problem. They can all sound convincing, show several calculations, and still disagree on the answer. Your task is to build a program that reads them and chooses one.
+Start with the [Project Guide](../guide/GUIDE.md) for the task description, example, research questions, assessment, deadline and submission rules.
 
-The language model has already done its part. We provide the questions, its four candidate solutions, and fixed numerical representations of those solutions. You decide how to use that information. The project can be done on CPU, and the repository includes the complete data.
-
-The output is simple: **one candidate index per question**. The interesting part is deciding what evidence makes one answer more believable than another.
-
-## A small example
-
-Suppose the question is:
-
-> A bus travels at 60 km/h. It leaves at 9 am and arrives at noon, including a 30-minute stop. How far does it travel?
-
-Two candidate excerpts might read:
-
-| Candidate | Reasoning and answer |
-|---|---|
-| A | There are 3 hours between 9 am and noon. Distance = 60 × 3 = **180 km**. |
-| B | The bus spends 2.5 hours moving. Distance = 60 × 2.5 = **150 km**. |
-
-Both multiplications are correct. Candidate A makes a mistake before the multiplication: it treats the stop as time spent moving. Candidate B accounts for the stop and reaches the correct answer.
-
-Real candidates can be harder to distinguish. An explanation may contain a bad intermediate step but land on the right final answer; a neat, internally consistent calculation may solve a slightly different problem. Our scorer checks the **final numeric answer**. Keep that distinction in mind when interpreting what your method has learned.
-
-## Questions worth investigating
-
-- **Does reading the reasoning actually help?** Compare methods that use the full solution, the question and final answer, or the supplied representations. Which information accounts for the improvement?
-- **What makes a wrong answer look convincing?** Does your method learn useful reasoning patterns, or depend on length, formatting and confident wording? Design an ablation that separates these explanations.
-- **Should a solution be judged on its own?** A candidate may look plausible until you compare it with the other three. Can comparing candidates expose a missed condition or a conflicting interpretation?
-- **Can the method recognise its own uncertainty?** Are high scores associated with correct choices? What happens on questions where different methods disagree?
-- **When does more computation pay off?** A more elaborate method or a combination of methods may improve accuracy, or just make the same mistakes more expensively. Measure which happens in your experiments.
-
-Pick a question you care about, state what you expect to happen, and test it. A failed idea with a clear explanation can teach us more than another model with an unexplained score. Your report should make the connection between your design, the evidence and the conclusion.
-
-## What you will build
-
-You write the selection method and any training code it needs. We supply an empty function interface and an independent evaluator. Training references let you determine which candidate answers are correct; validation is for development and selection. At evaluation, your method sees the question, the candidate texts and their fixed representations, then chooses a candidate without consulting reference answers.
-
-Each group has at least one correct final answer, and more than one candidate can be correct. Any correct choice earns the point. This makes the task about recognising a good answer among available solutions. The published score is selection accuracy on this course bank.
-
-The supplied `submission.py` defines the function signature only and raises `NotImplementedError`. No reference algorithm, training routine or trained checkpoint is supplied. The resource limits are **16 MiB of additional inference assets** and **30 seconds for complete CPU evaluation** on the reference machine; exact measurement rules are below.
-
-Read [the project guide](../guide/GUIDE.md) for assessment, constraints, submission and peer review. After obtaining the repository, run prediction and scoring commands from **code/**. No API key or model download is needed.
+This directory contains the complete dataset, an empty prediction interface and the official evaluation tools. No reference algorithm, training routine or trained checkpoint is supplied. Implement your own method before running prediction. Run the commands below from **`code/`**.
 
 ## 1. Install and check the data
 
@@ -119,13 +80,11 @@ python predict.py --method submission.py --checkpoint runs/model_bundle \
 
 The same frozen method must accept that bank without retraining or hard-coded sample counts. It should use the bank/arrays passed to `predict()`, rather than opening reference files or assuming that every input is the public test set.
 
-## 4. Resource measurement and reproducibility
+## 4. Measurement and reproduction
 
-- **CPU time:** measure one complete fresh prediction process plus the independent scoring process on the full test bank. Include startup, imports, asset/data loading, preprocessing, all ensemble members and prediction. The total must be at most **30 seconds** on the reference Xeon Platinum 8457C with **four threads across all libraries/processes**. The separate JSON timing fields do not include all process startup; measure externally and report your machine. Local timings are estimates; the instructor's reference CPU decides eligibility.
-- **Assets:** at most **16 MiB uncompressed** in total, including all weights, learned transforms/statistics, configurations, indexes and ensemble members. Supplied data and ordinary source code are excluded; arrays hidden in code still count. Compression or reconstruction at startup does not exempt an asset. One MiB is 2^20 bytes.
-- **Training:** CPU or one GPU no more powerful than RTX 4090. No course GPU is supplied. Record seeds, dependencies and training/search cost. Inference must run on CPU.
-- **Final repository:** include your report (at most 10 pages), exact installation/training/evaluation commands, official evaluation JSON, experiment/resource records, asset hashes and AI/reuse disclosure. Compare your initial and improved methods and analyse a key ablation and failures. Include all files needed for checkpoint evaluation without retraining.
-- **Peer reproduction:** use the submitted code version and matching checkpoint, follow its setup, then run the official prediction/scoring commands. Report the measured score and submission number through **Peer Review Report** or the email in the guide. Installation failures or small numerical differences alone do not establish score falsification.
+The [Guide](../guide/GUIDE.md#3-constraints) defines the resource limits and measurement rules: **30 seconds** for complete CPU prediction plus scoring with **four threads**, and **16 MiB** of additional inference assets. The runner's JSON timing fields do not include all process startup; measure externally and record your hardware.
+
+Pin your method's dependencies and provide exact installation/training/evaluation commands, seeds and matching inference assets. A peer should be able to use your submitted code version and checkpoint to run the official commands above **without retraining**. See the [submission and peer-review rules](../guide/GUIDE.md#4-submission-and-peer-review) for the full submission requirements and deadline.
 
 ## 5. Attribution
 
