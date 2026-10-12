@@ -3,12 +3,12 @@
 DASE7506 · Individual coursework · 10% of the course grade  
 **Submission deadline and leaderboard opening: to be announced.**
 
-A language model gives four solutions to the same maths problem. They may sound convincing and still disagree. Build a method that chooses a correct final answer, and investigate what makes your choice reliable. Use learning, checking rules, or your own combination; see the [README](../code/README.md) for an example and research questions.
+A language model gives four solutions to the same maths problem. They may sound convincing and still disagree. Build a method that chooses a correct final answer, and investigate what makes your choice reliable. See the [README](../code/README.md) for an example and research questions.
 
 ## 1. What we provide
 
 - **guide:** this assignment guide.
-- **code:** data, fixed text representations, an empty submission interface and evaluation tools. The [code README](../code/README.md) explains installation, formats and commands. Write your own method and training code.
+- **code:** data, fixed text representations, an empty submission interface and evaluation tools. No reference algorithm is supplied. The [code README](../code/README.md) explains installation, formats and commands.
 - **Data:** 4,755 training, 798 validation and 467 test questions. Each group has a correct final answer; test groups contain different valid answers. Correct answers may have flawed reasoning.
 
 ## 2. Ranking and assessment

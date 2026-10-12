@@ -2,7 +2,7 @@
 
 A language model produces four solutions to the same maths problem. They can all sound convincing, show several calculations, and still disagree on the answer. Your task is to build a program that reads them and chooses one.
 
-The language model has already done its part. We provide the questions, its four candidate solutions, and fixed numerical representations of those solutions. You decide how to use that information: train a small model, write a checking procedure, or combine ideas. The project can be done on CPU, and the repository includes the complete data.
+The language model has already done its part. We provide the questions, its four candidate solutions, and fixed numerical representations of those solutions. You decide how to use that information. The project can be done on CPU, and the repository includes the complete data.
 
 The output is simple: **one candidate index per question**. The interesting part is deciding what evidence makes one answer more believable than another.
 
@@ -19,7 +19,7 @@ Two candidate excerpts might read:
 | A | There are 3 hours between 9 am and noon. Distance = 60 × 3 = **180 km**. |
 | B | The bus spends 2.5 hours moving. Distance = 60 × 2.5 = **150 km**. |
 
-Both multiplications are correct. Candidate A makes a mistake before the multiplication: it treats the stop as time spent moving. Checking equations alone would miss that error. A method that notices the relevant condition could choose B.
+Both multiplications are correct. Candidate A makes a mistake before the multiplication: it treats the stop as time spent moving. Candidate B accounts for the stop and reaches the correct answer.
 
 Real candidates can be harder to distinguish. An explanation may contain a bad intermediate step but land on the right final answer; a neat, internally consistent calculation may solve a slightly different problem. Our scorer checks the **final numeric answer**. Keep that distinction in mind when interpreting what your method has learned.
 
@@ -39,7 +39,7 @@ You write the selection method and any training code it needs. We supply an empt
 
 Each group has at least one correct final answer, and more than one candidate can be correct. Any correct choice earns the point. This makes the task about recognising a good answer among available solutions. The published score is selection accuracy on this course bank.
 
-Start with a small implementation you can understand, record where it fails, and use those failures to motivate your next change. Methods with and without learned weights are both eligible. The resource limits are **16 MiB of additional inference assets** and **30 seconds for complete CPU evaluation** on the reference machine; exact measurement rules are below.
+The supplied `submission.py` defines the function signature only and raises `NotImplementedError`. No reference algorithm, training routine or trained checkpoint is supplied. The resource limits are **16 MiB of additional inference assets** and **30 seconds for complete CPU evaluation** on the reference machine; exact measurement rules are below.
 
 Read [the project guide](../guide/GUIDE.md) for assessment, constraints, submission and peer review. After obtaining the repository, run prediction and scoring commands from **code/**. No API key or model download is needed.
 
