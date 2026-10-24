@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-22",
+  "archive_extraction": "C:\\Users\\34262\\Desktop\\7506\\MP2\\submission-check-20261022-4haft9hr",
+  "commands": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.4341227999993862
+    },
+    {
+      "command": [
+        "check_data.py"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.9855360999999903
+    },
+    {
+      "command": [
+        "predict.py",
+        "--method",
+        "submission.py",
+        "--checkpoint",
+        "runs/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "runs/pre-submit-predictions.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.43217039999944973
+    },
+    {
+      "command": [
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "runs/pre-submit-predictions.json",
+        "--output",
+        "runs/pre-submit-score.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.20047899999917718
+    }
+  ],
+  "official_score": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 391,
+    "n": 467,
+    "accuracy": 83.72591006423983,
+    "scoring_seconds": 0.027715799999896262
+  },
+  "all_467_choices_match_original": true,
+  "public_publishing_performed": false
+}

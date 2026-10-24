@@ -1,0 +1,20 @@
+{
+  "selected_model": {
+    "mode": "no_consensus",
+    "layers": 1,
+    "kind": "logistic",
+    "parameter": 0.01,
+    "seed": 42,
+    "validation_accuracy": 92.60651629072682,
+    "feature_dimension": 2064
+  },
+  "checkpoint_sha256": {
+    "config.json": "af94b3ca44b597fbba78d21ff6b44a793d10580b5239c858b67ebf0f9f42aeeb",
+    "weights.npz": "b0b5338add41d065640679e447d936c6129fdb67705ecb1ca2147477b3804b98"
+  },
+  "training_total_seconds": 51.51941100001568,
+  "test_not_used_for_selection": true,
+  "search_models": 15,
+  "selection_rule": "highest validation accuracy; first grid entry wins ties",
+  "internal_mlp_early_stopping": "candidate-level holdout within training; related candidates may share questions"
+}

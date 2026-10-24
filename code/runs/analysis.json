@@ -1,0 +1,67 @@
+{
+  "validation_margin_quartiles": [
+    [
+      "Q1",
+      200,
+      "0.000 - 0.278",
+      "93.50%"
+    ],
+    [
+      "Q2",
+      200,
+      "0.280 - 0.701",
+      "93.50%"
+    ],
+    [
+      "Q3",
+      199,
+      "0.702 - 1.370",
+      "90.95%"
+    ],
+    [
+      "Q4",
+      199,
+      "1.378 - 8.347",
+      "92.46%"
+    ]
+  ],
+  "validation_answer_diversity": [
+    [
+      "one valid answer value",
+      443,
+      "100.00%"
+    ],
+    [
+      "two or more answer values",
+      355,
+      "83.38%"
+    ]
+  ],
+  "validation_failure_examples": [
+    {
+      "question": "Lizette scored 92 on her third quiz giving her an average of 94. What is Lizette's average in her first two quizzes?",
+      "selected_index": 2,
+      "selected_answer": "98",
+      "reference_answer": "95",
+      "margin": 0.0711979866027832
+    },
+    {
+      "question": "Eddy\u2019s spider plant produces 2 baby plants 2 times a year.  After 4 years, how many baby plants will the mother plant have produced?",
+      "selected_index": 0,
+      "selected_answer": "8",
+      "reference_answer": "16",
+      "margin": 0.825629711151123
+    },
+    {
+      "question": "Megan bought 2 dozen eggs. As she was walking to her car, she dropped a tray of eggs. 3 eggs broke, and twice as many cracked. What is the difference between the eggs that are still in perfect condition and those that are cracked?",
+      "selected_index": 2,
+      "selected_answer": "6",
+      "reference_answer": "9",
+      "margin": 0.0362548828125
+    }
+  ],
+  "test_wilson_95_percent": [
+    80.1051639778477,
+    86.79631626518946
+  ]
+}

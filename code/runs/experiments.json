@@ -1,0 +1,157 @@
+[
+  {
+    "name": "majority",
+    "validation_accuracy": 86.21553884711778,
+    "fit_seconds": 0
+  },
+  {
+    "name": "embedding_logistic_0.01",
+    "validation_accuracy": 89.22305764411027,
+    "fit_seconds": 1.1880066999583505,
+    "iterations": 90,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 12292
+  },
+  {
+    "name": "embedding_logistic_0.1",
+    "validation_accuracy": 89.3483709273183,
+    "fit_seconds": 1.9375164000084624,
+    "iterations": 170,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 12292
+  },
+  {
+    "name": "embedding_logistic_1.0",
+    "validation_accuracy": 88.84711779448622,
+    "fit_seconds": 2.2761370000080206,
+    "iterations": 205,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 12292
+  },
+  {
+    "name": "text_logistic_0.01",
+    "validation_accuracy": 89.22305764411027,
+    "fit_seconds": 0.26040550001198426,
+    "iterations": 13,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 196
+  },
+  {
+    "name": "text_logistic_0.1",
+    "validation_accuracy": 89.3483709273183,
+    "fit_seconds": 0.2569910000311211,
+    "iterations": 16,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 196
+  },
+  {
+    "name": "text_logistic_1.0",
+    "validation_accuracy": 89.22305764411027,
+    "fit_seconds": 0.2639997000223957,
+    "iterations": 20,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 196
+  },
+  {
+    "name": "no_consensus_logistic_0.01",
+    "validation_accuracy": 92.60651629072682,
+    "fit_seconds": 2.3830646999995224,
+    "iterations": 105,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 24772
+  },
+  {
+    "name": "no_consensus_logistic_0.1",
+    "validation_accuracy": 92.10526315789474,
+    "fit_seconds": 4.231038000027183,
+    "iterations": 205,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 24772
+  },
+  {
+    "name": "no_consensus_logistic_1.0",
+    "validation_accuracy": 91.60401002506265,
+    "fit_seconds": 6.206367800012231,
+    "iterations": 311,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 24772
+  },
+  {
+    "name": "full_logistic_0.01",
+    "validation_accuracy": 91.8546365914787,
+    "fit_seconds": 2.034781499998644,
+    "iterations": 85,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 24772
+  },
+  {
+    "name": "full_logistic_0.1",
+    "validation_accuracy": 91.47869674185463,
+    "fit_seconds": 3.693867900001351,
+    "iterations": 164,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 24772
+  },
+  {
+    "name": "full_logistic_1.0",
+    "validation_accuracy": 91.35338345864662,
+    "fit_seconds": 5.6353511000052094,
+    "iterations": 262,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 24772
+  },
+  {
+    "name": "full_mlp_0.1",
+    "validation_accuracy": 92.4812030075188,
+    "fit_seconds": 4.891275800007861,
+    "iterations": 38,
+    "export_choices_match": false,
+    "probability_choice_disagreements": 5,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 280964
+  },
+  {
+    "name": "full_mlp_1.0",
+    "validation_accuracy": 91.60401002506265,
+    "fit_seconds": 4.510691399977077,
+    "iterations": 36,
+    "export_choices_match": true,
+    "probability_choice_disagreements": 0,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 280964
+  },
+  {
+    "name": "full_mlp_10.0",
+    "validation_accuracy": 91.97994987468672,
+    "fit_seconds": 2.900821699993685,
+    "iterations": 22,
+    "export_choices_match": false,
+    "probability_choice_disagreements": 1,
+    "raw_logits_allclose": true,
+    "asset_array_bytes": 280964
+  }
+]

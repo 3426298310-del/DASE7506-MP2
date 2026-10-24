@@ -1,0 +1,8 @@
+{
+  "submission.py": "0c37e260ed69eed89f51fb07b984fac4c1667006b1156599108e93e730e0e0b9",
+  "train.py": "9876fdd09abc20ab4240e87feb4645c2288d8dce49416f8d432d59ba8ccdc639",
+  "evaluate.py": "b61d57dec0791aaffe216ea2eb4a3ae430c2d716ccb9db1d9cf52cd8745f7eaf",
+  "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+  "predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+  "score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960"
+}

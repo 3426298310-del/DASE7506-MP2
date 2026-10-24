@@ -1,0 +1,9 @@
+{
+  "mode": "no_consensus",
+  "layers": 1,
+  "kind": "logistic",
+  "parameter": 0.01,
+  "seed": 42,
+  "validation_accuracy": 92.60651629072682,
+  "feature_dimension": 2064
+}
